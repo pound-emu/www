@@ -81,12 +81,19 @@ p {
   padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: space-between;
   z-index: 1000;
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
   border: 1px solid rgba(255,255,255,0.2);
+  transition: width 0.3s ease;
 }
 
+/* mobile */
+@media (max-width: 768px) {
+  .glass-header {
+    width: 90%;
+  }
+}
 
 .logo-link {
   display: flex;
@@ -98,4 +105,20 @@ p {
   height: 40px;
   width: 40px;
   border-radius: 12px;
+}
+
+.header-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.icon-link {
+  color: white;
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.icon-link:hover {
+  color: #ddd;
 }
