@@ -3,7 +3,7 @@ body, html {
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
   height: 100%;
-  background: linear-gradient(135deg, #ff4f4f, #ffb347);
+  background: linear-gradient(135deg, #c0c0c0, #e0e0e0);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -22,41 +22,47 @@ body, html {
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(240, 240, 240, 0.15);
   border-radius: 20px;
   padding: 40px;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 30px rgba(0,0,0,0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(180, 180, 180, 0.3);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06); /* soft lift */
   text-align: center;
-  color: #fff;
+  color: #333;
   max-width: 400px;
 }
 
 h1 {
   margin: 0;
   font-size: 2em;
+  color: #222;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.04); /* light text shadow */
 }
 
 p {
   margin: 20px 0;
   font-size: 1em;
+  color: #444;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);
 }
 
 .btn {
   display: inline-block;
-  background: rgba(255,255,255,0.2);
+  background: rgba(200, 200, 200, 0.3);
   padding: 10px 20px;
   border-radius: 12px;
-  color: #fff;
+  color: #222;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
 }
 
 .btn:hover {
-  background: rgba(255,255,255,0.4);
+  background: rgba(200, 200, 200, 0.5);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
 }
 
 .glass-header {
@@ -66,17 +72,17 @@ p {
   transform: translateX(-50%);
   width: 33%;
   min-width: 250px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(240, 240, 240, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-radius: 20px;
   padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 1000;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(180, 180, 180, 0.3);
   transition: width 0.3s ease;
 }
 
@@ -93,9 +99,14 @@ p {
 }
 
 .header-logo {
-  height: 40px;
-  width: 40px;
-  border-radius: 12px;
+  height: 32px;
+  width: 32px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .header-icons {
@@ -105,21 +116,24 @@ p {
 }
 
 .icon-link {
-  color: white;
+  color: #222;
   font-size: 1.1rem;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
 .icon-link:hover {
-  color: #ddd;
+  color: #555;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .quantum-link {
   font-weight: bold;
   font-size: 0.95rem;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(200, 200, 200, 0.25);
   padding: 4px 10px;
   border-radius: 10px;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
