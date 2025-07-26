@@ -10,10 +10,19 @@
 <body>
   <header class="glass-header">
     <a href="/" class="logo-link">
-      <img src="assets/icon.webp" alt="Pound Logo" class="header-logo" />
+      <img src="assets/pound.png" alt="Pound Logo" class="header-logo" />
     </a>
     <div class="header-icons">
-      <a href="/quantum-computing/" class="icon-link quantum-link">Quantum Computing</a>
+      <div class="dropdown">
+        <button id="dropdownBtn" class="dropbtn">
+          TEMP_LABEL <i class="bi bi-caret-right-fill"></i>
+        </button>
+        <div id="dropdownContent" class="dropdown-content glass-dropdown">
+          <a href="/overview/">Overview</a>
+          <a href="/docs/">Docs</a>
+          <a href="/experiments/">Experiments</a>
+        </div>
+      </div>
       <a href="https://discord.gg/aMmTmKsVC7" target="_blank" class="icon-link">
         <i class="bi bi-discord"></i>
       </a>
@@ -30,5 +39,30 @@
       <a href="https://github.com/pound-emu/pound" class="btn">View on GitHub</a>
     </div>
   </div>
+
+  <script>
+    const btn = document.getElementById('dropdownBtn');
+    const content = document.getElementById('dropdownContent');
+    const icon = btn.querySelector('i');
+
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation(); // prevent click bubbling to document
+      content.classList.toggle('active');
+
+      if (content.classList.contains('active')) {
+        icon.style.transform = 'rotate(90deg)';
+      } else {
+        icon.style.transform = 'rotate(0deg)';
+      }
+    });
+
+    // Close dropdown if clicking outside
+    document.addEventListener('click', (e) => {
+      if (content.classList.contains('active')) {
+        content.classList.remove('active');
+        icon.style.transform = 'rotate(0deg)';
+      }
+    });
+  </script>
 </body>
 </html>
